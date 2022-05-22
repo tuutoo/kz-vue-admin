@@ -44,24 +44,24 @@ export const columns: BasicColumn[] = [
   },
   {
     title: '缓存',
-    dataIndex: 'keepalive',
+    dataIndex: 'keepAlive',
     width: 80,
     defaultHidden: true,
     customRender: ({ record }) => {
-      const status = record.keepalive;
+      const status = record.keepAlive;
       const enable = ~~status === 1;
       const color = enable ? 'green' : 'red';
-      const text = enable ? '启用' : '停用';
+      const text = enable ? '启用' : '禁用';
       return h(Tag, { color: color }, () => text);
     },
   },
   {
     title: '是否显示',
-    dataIndex: 'show',
+    dataIndex: 'hideMenu',
     width: 80,
     customRender: ({ record }) => {
-      const show = record.show;
-      const enable = ~~show === 1;
+      const hideMenu = record.hideMenu;
+      const enable = ~~hideMenu === 0;
       const color = enable ? 'green' : 'red';
       const text = enable ? '显示' : '隐藏';
       return h(Tag, { color: color }, () => text);
@@ -69,13 +69,13 @@ export const columns: BasicColumn[] = [
   },
   {
     title: '状态',
-    dataIndex: 'status',
+    dataIndex: 'disabled',
     width: 80,
     customRender: ({ record }) => {
-      const status = record.status;
-      const enable = ~~status === 1;
+      const status = record.disabled;
+      const enable = ~~status === 0;
       const color = enable ? 'green' : 'red';
-      const text = enable ? '启用' : '停用';
+      const text = enable ? '启用' : '禁用';
       return h(Tag, { color: color }, () => text);
     },
   },
@@ -134,7 +134,7 @@ export const searchFormSchema: FormSchema[] = [
   //   componentProps: {
   //     options: [
   //       { label: '启用', value: 1 },
-  //       { label: '停用', value: 0 },
+  //       { label: '禁用', value: 0 },
   //     ],
   //   },
   //   colProps: { span: 6 },
@@ -223,53 +223,53 @@ export const formSchema: FormSchema[] = [
     field: 'external',
     label: '是否外链',
     component: 'RadioButtonGroup',
-    defaultValue: 0,
+    defaultValue: false,
     componentProps: {
       options: [
-        { label: '是', value: 1 },
-        { label: '否', value: 0 },
+        { label: '是', value: true },
+        { label: '否', value: false },
       ],
     },
     ifShow: ({ values }) => !isButton(values.type),
   },
   {
-    field: 'keepalive',
+    field: 'keepAlive',
     label: '是否缓存',
     component: 'RadioButtonGroup',
-    defaultValue: 1,
+    defaultValue: true,
     componentProps: {
       options: [
-        { label: '是', value: 1 },
-        { label: '否', value: 0 },
+        { label: '是', value: true },
+        { label: '否', value: false },
       ],
     },
     ifShow: ({ values }) => isMenu(values.type),
   },
 
   {
-    field: 'show',
+    field: 'hideMenu',
     label: '是否显示',
     component: 'RadioButtonGroup',
-    defaultValue: 1,
+    defaultValue: false,
     helpMessage: '会生成路由,但左侧菜单不可见',
     componentProps: {
       options: [
-        { label: '是', value: 1 },
-        { label: '否', value: 0 },
+        { label: '是', value: false },
+        { label: '否', value: true },
       ],
     },
     ifShow: ({ values }) => !isButton(values.type),
   },
   {
-    field: 'status',
+    field: 'disabled',
     label: '状态',
     component: 'RadioButtonGroup',
-    defaultValue: 1,
+    defaultValue: false,
     helpMessage: '不会生成路由,同时左侧菜单不可见',
     componentProps: {
       options: [
-        { label: '启用', value: 1 },
-        { label: '禁用', value: 0 },
+        { label: '启用', value: false },
+        { label: '禁用', value: true },
       ],
     },
   },

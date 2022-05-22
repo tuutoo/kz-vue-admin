@@ -107,7 +107,7 @@ export const searchFormSchema: FormSchema[] = [
     componentProps: {
       options: [
         { label: '运行', value: 1 },
-        { label: '停用', value: 0 },
+        { label: '禁用', value: 0 },
       ],
     },
     colProps: { span: 6 },

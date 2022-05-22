@@ -56,7 +56,7 @@ export const columns: BasicColumn[] = [
       const status = record.status;
       const enable = ~~status === 1;
       const color = enable ? 'green' : 'red';
-      const text = enable ? '启用' : '停用';
+      const text = enable ? '启用' : '禁用';
       return h(Tag, { color: color }, () => text);
     },
   },
@@ -106,7 +106,7 @@ export const searchFormSchema: FormSchema[] = [
     componentProps: {
       options: [
         { label: '启用', value: 1 },
-        { label: '停用', value: 0 },
+        { label: '禁用', value: 0 },
       ],
     },
     colProps: { sm: 12, xl: 6 },

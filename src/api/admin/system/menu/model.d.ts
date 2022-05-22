@@ -1,19 +1,19 @@
 declare namespace API {
   type MenuListResultItem = {
-    createTime: string;
+    createAt: string;
     updatedAt: string;
-    id: number;
-    parent: number;
+    id: string;
+    parentId: string;
     name: string;
     path: string;
-    permisson: string;
+    permission: string;
     type: number;
     icon: string;
     orderNo: number;
     component: string;
-    keepalive: number;
-    external: number;
-    show: number;
+    keepAlive: boolean;
+    external: boolean;
+    hideMenu: boolean;
   };
 
   /** 获取菜单列表参数 */
@@ -22,16 +22,16 @@ declare namespace API {
   /** 新增菜单参数 */
   type MenuAddParams = {
     type: number;
-    parent: number;
+    parentId: string;
     name: string;
     orderNo: number;
     path: string;
     component: string;
     icon: string;
     permission: string;
-    show: number;
-    external: number;
-    keepalive: number;
+    hideMenu: boolean;
+    external: boolean;
+    keepAlive: boolean;
   };
 
   /** 更新某项菜单参数 */
@@ -42,10 +42,10 @@ declare namespace API {
   /** 获取菜单详情结果 */
   type MenuInfoResult = {
     menu: {
-      createTime: string;
+      createAt: string;
       updateTime: string;
-      id: number;
-      parent: number;
+      id: string;
+      parentId: string;
       name: string;
       path: string;
       permission: string;
@@ -53,15 +53,15 @@ declare namespace API {
       icon: string;
       orderNo: number;
       component: string;
-      keepalive: number;
-      external: number;
-      show: number;
+      keepAlive: boolean;
+      external: boolean;
+      hideMenu: boolean;
     };
     parentMenu: {
-      createTime: string;
+      createAt: string;
       updateTime: string;
-      id: number;
-      parent: number;
+      id: string;
+      parentId: string;
       name: string;
       path: string;
       permission: string;
@@ -69,8 +69,8 @@ declare namespace API {
       icon: string;
       orderNo: number;
       component: string;
-      keepalive: number;
-      show: number;
+      keepAlive: boolean;
+      hideMenu: boolean;
     };
   };
 }
