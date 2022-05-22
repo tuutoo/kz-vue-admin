@@ -1,7 +1,12 @@
 import { defHttp } from '/@/utils/http/axios';
 
 enum Api {
-  List = '/sys/menu/list',
+  // List = '/sys/menu/list',
+  // Info = '/sys/menu/info',
+  // Add = '/sys/menu/add',
+  // Update = '/sys/menu/update',
+  // Delete = '/sys/menu/delete',
+  List = '/sys/menu',
   Info = '/sys/menu/info',
   Add = '/sys/menu/add',
   Update = '/sys/menu/update',
