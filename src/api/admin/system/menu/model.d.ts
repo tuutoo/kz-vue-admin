@@ -5,6 +5,7 @@ declare namespace API {
     id: string;
     parentId: string;
     name: string;
+    title: string;
     path: string;
     permission: string;
     type: number;
@@ -24,6 +25,7 @@ declare namespace API {
     type: number;
     parentId: string;
     name: string;
+    title: string;
     orderNo: number;
     path: string;
     component: string;
@@ -36,7 +38,7 @@ declare namespace API {
 
   /** 更新某项菜单参数 */
   type MenuUpdateParams = MenuAddParams & {
-    id: number;
+    id: string;
   };
 
   /** 获取菜单详情结果 */
@@ -63,6 +65,7 @@ declare namespace API {
       id: string;
       parentId: string;
       name: string;
+      title: string;
       path: string;
       permission: string;
       type: number;

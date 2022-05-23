@@ -58,7 +58,7 @@
       } else {
         await updateMenu({
           ...values,
-          id: parseInt(values.id),
+          id: values.id,
         });
       }
 

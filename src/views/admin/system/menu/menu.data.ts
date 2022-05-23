@@ -127,18 +127,6 @@ export const searchFormSchema: FormSchema[] = [
     component: 'Input',
     colProps: { sm: 12, xl: 6 },
   },
-  // {
-  //   field: 'status',
-  //   label: '状态',
-  //   component: 'Select',
-  //   componentProps: {
-  //     options: [
-  //       { label: '启用', value: 1 },
-  //       { label: '禁用', value: 0 },
-  //     ],
-  //   },
-  //   colProps: { span: 6 },
-  // },
 ];
 
 export const formSchema: FormSchema[] = [
@@ -165,6 +153,12 @@ export const formSchema: FormSchema[] = [
   {
     field: 'name',
     label: '菜单名称',
+    component: 'Input',
+    required: true,
+  },
+  {
+    field: 'title',
+    label: '菜单翻译',
     component: 'Input',
     required: true,
   },
