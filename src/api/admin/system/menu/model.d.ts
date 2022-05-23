@@ -5,7 +5,6 @@ declare namespace API {
     id: string;
     parentId: string;
     name: string;
-    title: string;
     path: string;
     permission: string;
     type: number;
@@ -25,7 +24,6 @@ declare namespace API {
     type: number;
     parentId: string;
     name: string;
-    title: string;
     orderNo: number;
     path: string;
     component: string;
@@ -65,7 +63,6 @@ declare namespace API {
       id: string;
       parentId: string;
       name: string;
-      title: string;
       path: string;
       permission: string;
       type: number;

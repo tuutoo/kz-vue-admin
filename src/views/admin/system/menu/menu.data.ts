@@ -157,12 +157,6 @@ export const formSchema: FormSchema[] = [
     required: true,
   },
   {
-    field: 'title',
-    label: '菜单翻译',
-    component: 'Input',
-    required: true,
-  },
-  {
     field: 'parentId',
     label: '上级菜单',
     component: 'TreeSelect',
